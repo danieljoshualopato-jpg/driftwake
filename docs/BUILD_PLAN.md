@@ -87,14 +87,14 @@ Done when you can open the project in Godot, press Play, and see a window with t
 
 Done when you can walk through three connected rooms of the colony with the camera following, bump into walls, and step through doors. No combat yet; this phase is about the world feeling solid.
 
-- [ ] `Player.tscn`: CharacterBody2D, 8-direction movement with acceleration and friction, four-direction walk and idle animations via AnimatedSprite2D
+- [ ] `Player.tscn`: CharacterBody2D, 8-direction movement with acceleration and friction, four-direction walk and idle animations via AnimatedSprite2D. *Movement done; animations wait for a real player sprite (a facing marker stands in).*
 - [x] `MovementComponent` so the same movement code serves enemies later
-- [x] Camera2D with smoothing and per-area limits so it never shows the void past the map edge
-- [ ] TileSet with physics layers (floor, wall, pit) and a navigation layer for enemy pathing later
-- [ ] Three areas: `Area_Hangar` (start), `Area_Corridor`, `Area_Medbay`, each a scene with a TileMapLayer and a `Doors` node
-- [ ] `Door` node and `SceneRouter`: walk into a door, screen fades, next area loads at the matching spawn point
-- [ ] `Interactable` component: walk up, press interact, something happens (a terminal prints a line to the screen for now)
-- [ ] A debug overlay (F3) showing FPS, position and current area; it saves hours later
+- [x] Camera2D with smoothing and per-area limits so it never shows the void past the map edge. *Rooms smaller than the screen are centred.*
+- [ ] TileSet with physics layers (floor, wall, pit) and a navigation layer for enemy pathing later. *Wall and pit layers done. Navigation moves to Phase 2: a baked NavigationRegion2D per area carves around walls properly, which per-tile nav polygons cannot.*
+- [x] Three areas: `Area_Hangar` (start), `Area_Corridor`, `Area_Medbay`, each a scene with a TileMapLayer and a `Doors` node
+- [x] `Door` node and `SceneRouter`: walk into a door, screen fades, next area loads at the matching spawn point
+- [x] `Interactable` component: walk up, press interact, something happens (a terminal prints a line to the screen for now)
+- [x] A debug overlay (F3) showing FPS, position and current area; it saves hours later
 
 What we learn here decides the feel of everything: movement speed, tile size, how far the camera leads. Expect to tune numbers twice.
 
