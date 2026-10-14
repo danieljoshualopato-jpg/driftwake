@@ -1,6 +1,6 @@
 extends Node
 ## The one thing that loads areas. Main registers the world container and the
-## persistent player once; after that, anything (doors, from Phase 1) can call
+## persistent player once; after that, anything (doors, respawns) can call
 ## change_area() and the router handles the fade, the swap and the spawn.
 
 const FADE_TIME := 0.25
@@ -38,6 +38,7 @@ func change_area(area_path: String, spawn: StringName, fade := true) -> void:
 		push_error("SceneRouter: cannot load area '%s'" % area_path)
 		return
 	_busy = true
+	_player.controls_enabled = false
 	if fade:
 		await _fade_to(1.0)
 
@@ -55,6 +56,7 @@ func change_area(area_path: String, spawn: StringName, fade := true) -> void:
 
 	if fade:
 		await _fade_to(0.0)
+	_player.controls_enabled = true
 	_busy = false
 
 

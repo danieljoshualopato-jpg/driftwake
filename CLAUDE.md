@@ -17,6 +17,6 @@ Run `powershell -ExecutionPolicy Bypass -File tools/check.ps1` and make sure it 
 - One feature per branch (`phase-0`, `phase-1-doors`, …). Every push leaves the game playable.
 - Systems talk through EventBus signals, not direct references. GameState is the only thing SaveManager serialises. Bump `GameState.SAVE_VERSION` and add a migration step when its shape changes.
 - Tunable numbers are `@export` vars or resources, never literals buried in logic.
-- Areas extend `WorldArea` (`scenes/world/world_area.gd`): `Floor` and `Walls` TileMapLayers, `Spawns/<name>` markers, `Doors`, and a y-sorted `Entities` node. Camera limits come from the painted Floor.
-- Rooms are painted by hand in the editor from now on. `tools/build_hangar.gd` refuses to overwrite them without `-- --force`.
+- Areas extend `WorldArea` (`scenes/world/world_area.gd`): `Floor` and `Walls` TileMapLayers, `Spawns/<name>` markers (`from_<area>` for arrivals), `Door` instances under `Doors`, and props (e.g. `Terminal`) under the y-sorted `Entities` node. Camera limits come from the painted Floor.
+- Rooms are painted by hand in the editor from now on. `tools/build_rooms.gd` refuses to overwrite them without `-- --force`. Atlas columns in `tools/gen_placeholder_art.gd` are append-only, because painted maps refer to tiles by column.
 - Godot rewrites `.tscn`/`.tres` files and adds `uid`s when the editor saves. That is expected, so commit those changes.

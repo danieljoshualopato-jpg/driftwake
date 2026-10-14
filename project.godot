@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Driftwake"
-config/version="0.1.0-dev"
+config/version="0.2.0-dev"
 run/main_scene="res://scenes/Main.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
@@ -108,6 +108,7 @@ debug_overlay={
 2d_physics/layer_4="interactables"
 2d_physics/layer_5="hitboxes"
 2d_physics/layer_6="hurtboxes"
+2d_physics/layer_7="pits"
 
 [physics]
 
@@ -118,3 +119,4 @@ common/physics_interpolation=true
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.043, 0.051, 0.063, 1)

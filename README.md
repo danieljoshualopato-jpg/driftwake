@@ -21,7 +21,7 @@ The full roadmap is in [docs/BUILD_PLAN.md](docs/BUILD_PLAN.md) and progress is 
 | Pause | Esc or P | Start |
 | Debug overlay | F3 | Back / Select |
 
-Only movement does something so far. The other actions are bound now so later phases can use them.
+Movement, interact and the debug overlay work so far. The other actions are bound now so later phases can use them.
 
 ## Checks
 
