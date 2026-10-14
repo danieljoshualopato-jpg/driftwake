@@ -1,0 +1,7 @@
+# Godot writes LF; keep it that way on every OS so diffs stay clean.
+* text=auto eol=lf
+*.png binary
+*.wav binary
+*.ogg binary
+*.ttf binary
+*.ps1 text eol=crlf

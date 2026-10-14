@@ -1,0 +1,14 @@
+# Godot cache and editor state (regenerated on open)
+.godot/
+
+# Export output
+/builds/
+*.exe
+*.pck
+*.dmg
+*.x86_64
+
+# OS clutter
+Thumbs.db
+desktop.ini
+.DS_Store
